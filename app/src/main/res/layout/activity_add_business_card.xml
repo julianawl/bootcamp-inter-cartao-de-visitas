@@ -113,21 +113,22 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/add_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
         android:layout_marginVertical="16dp"
         android:layout_marginStart="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_photo_label"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize"
-        tools:src="@tools:sample/avatars" />
+        app:srcCompat="@drawable/default_user_image" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add_photo_gallery"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginVertical="16dp"
+        android:layout_marginVertical="8dp"
         android:backgroundTint="@color/purple_app"
         android:fontFamily="sans-serif"
         android:text="@string/add_gallery_photo_btn"
@@ -142,7 +143,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginVertical="16dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/purple_app"
         android:fontFamily="sans-serif"
         android:text="@string/add_camera_photo_btn"
@@ -154,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/add_photo_gallery" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/add_card_color"
+        android:id="@+id/add_card_color_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -169,7 +170,7 @@
         app:layout_constraintTop_toBottomOf="@id/add_image_view" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/add_card"
+        android:id="@+id/add_card_btn"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:fontFamily="sans-serif"
@@ -177,7 +178,7 @@
         app:iconGravity="textStart"
         app:iconPadding="10dp"
         android:background="@drawable/button_shape"
-        app:backgroundTint=""
+        app:backgroundTint="#66BB6A"
         android:text="@string/add_done"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

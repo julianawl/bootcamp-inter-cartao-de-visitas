@@ -1,23 +1,26 @@
 package com.bootcamp.businesscard.data
 
-import androidx.room.Database
-import androidx.room.DatabaseConfiguration
-import androidx.room.InvalidationTracker
-import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteOpenHelper
+import android.content.Context
+import androidx.room.*
 import com.bootcamp.businesscard.data.model.BusinessCard
 
 @Database(entities = [BusinessCard::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
-    override fun createOpenHelper(config: DatabaseConfiguration?): SupportSQLiteOpenHelper {
-        TODO("Not yet implemented")
-    }
+    abstract fun businessDao(): BusinessCardDao
 
-    override fun createInvalidationTracker(): InvalidationTracker {
-        TODO("Not yet implemented")
-    }
+    companion object{
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
 
-    override fun clearAllTables() {
-        TODO("Not yet implemented")
+        fun getDatabase(context: Context): AppDatabase{
+            return INSTANCE ?: synchronized(this){
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                "businesscard_db").build()
+                INSTANCE = instance
+                instance
+            }
+        }
     }
 }

@@ -12,4 +12,6 @@
     <string name="add_image_label">Adicionar imagem:</string>
     <string name="add_card_color">Cor do cartão</string>
     <string name="add_done">Confirmar</string>
+    <string name="msg_add_card_success">Cartão cadastrado com sucesso</string>
+    <string name="label_share">Compartilhar</string>
 </resources>
